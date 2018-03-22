@@ -108,7 +108,6 @@ def build_training_graph(hypes, queue, modules):
 
     # Add the Op for pruning to graph
     with tf.name_scope("Pruning"):
-        global_step = tf.train.get_global_step()
         pruning_hypes = tf.contrib.model_pruning.get_pruning_hparams().override_from_dict(hypes['pruning'])
         p = tf.contrib.model_pruning.Pruning(pruning_hypes, global_step=global_step)
         mask_update_op = p.conditional_mask_update_op()

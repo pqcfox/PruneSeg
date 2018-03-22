@@ -67,8 +67,7 @@
 
   "pruning": {
       "name": "fcn8_vgg_prune",
-      "target_sparsity": 0.5,
-      "do_not_prune": []
+      "target_sparsity": 0.5
   },
 
   "use_fc_wd": true,
