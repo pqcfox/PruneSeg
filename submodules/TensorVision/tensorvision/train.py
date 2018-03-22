@@ -236,6 +236,7 @@ def run_training(hypes, modules, tv_graph, tv_sess, start_step=0):
 
         if step % display_iter:
             sess.run([tv_graph['train_op']], feed_dict=feed_dict)
+            sess.run(mask_update_op)
 
         # Write the summaries and print an overview fairly often.
         elif step % display_iter == 0:
@@ -254,6 +255,8 @@ def run_training(hypes, modules, tv_graph, tv_sess, start_step=0):
             smoothed_results = dict_smoother.get_weights()
 
             _print_eval_dict(eval_names, smoothed_results, prefix='(smooth)')
+
+            sess.run(mask_update_op)
 
             # Reset timer
             start_time = time.time()

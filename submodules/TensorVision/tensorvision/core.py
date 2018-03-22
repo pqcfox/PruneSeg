@@ -106,11 +106,19 @@ def build_training_graph(hypes, queue, modules):
 
         summary_op = tf.summary.merge_all()
 
+    # Add the Op for pruning to graph
+    with tf.name_scope("Pruning"):
+        global_step = tf.train.get_global_step()
+        p = pruning.Pruning(hypes.pruning_hparams, global_step=global_step)
+        mask_update_op = p.conditional_mask_update_op()
+        p.add_pruning_summaries()
+
     graph = {}
     graph['losses'] = losses
     graph['eval_list'] = eval_list
     graph['summary_op'] = summary_op
     graph['train_op'] = train_op
+    graph['mask_update_op'] = mask_update_op
     graph['global_step'] = global_step
     graph['learning_rate'] = learning_rate
     graph['decoded_logits'] = learning_rate
