@@ -25,6 +25,7 @@ sys.path.insert(1, 'incl')
 import tensorvision.train as train
 import tensorvision.analyze as ana
 import tensorvision.utils as utils
+import tensorvision.core as core 
 
 from evaluation import kitti_test
 
@@ -104,19 +105,29 @@ def main(_):
     train.maybe_download_and_extract(hypes)
 
     maybe_download_and_extract(runs_dir)
-    logging.info("Evaluating on Validation data.")
+
+
+    logging.info("Trimming weights.")
+
     logdir = os.path.join(runs_dir, FLAGS.RUN)
-    # logging.info("Output images will be saved to {}".format)
-    ana.do_analyze(logdir)
+    hypes = utils.load_hypes_from_logdir(logdir)
+    modules = utils.load_modules_from_logdir(logdir)
 
-    logging.info("Creating output on test data.")
-    kitti_test.do_inference(logdir)
+    with tf.Graph().as_default():
 
-    logging.info("Analysis for pretrained model complete.")
-    logging.info("For evaluating your own models I recommend using:"
-                 "`tv-analyze --logdir /path/to/run`.")
-    logging.info("tv-analysis has a much cleaner interface.")
+        # prepaire the tv session
+        image_pl = tf.placeholder(tf.float32)
+        image = tf.expand_dims(image_pl, 0)
+        image.set_shape([1, None, None, 3])
+        inf_out = core.build_inference_graph(hypes, modules,
+                                             image=image)
 
+        # Create a session for running Ops on the Graph.
+        sess = tf.Session()
+        saver = tf.train.Saver()
+
+        core.load_weights(logdir, sess, saver)
+        print('locked and loaded')
 
 if __name__ == '__main__':
     tf.app.run()

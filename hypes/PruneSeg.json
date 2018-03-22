@@ -50,8 +50,8 @@
     "display_iter": 20,
     "eval_iter": 100,
     "write_iter": 100,
-    "save_iter": 2000,
-    "image_iter": 20000
+    "save_iter": 1500,
+    "image_iter": 1500 
   },
 
   "solver": {
@@ -62,7 +62,7 @@
       "threads": 4,
       "learning_rate": 1e-5,
       "learning_rate_step": null,
-      "max_steps": 12000
+      "max_steps": 1520
   },
 
   "pruning": {

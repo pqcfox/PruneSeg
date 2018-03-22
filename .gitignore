@@ -76,3 +76,6 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Background tasks
+nohup.out
