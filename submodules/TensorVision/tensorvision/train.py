@@ -236,7 +236,7 @@ def run_training(hypes, modules, tv_graph, tv_sess, start_step=0):
 
         if step % display_iter:
             sess.run([tv_graph['train_op']], feed_dict=feed_dict)
-            sess.run(mask_update_op)
+            sess.run([tv_graph['mask_update_op']])
 
         # Write the summaries and print an overview fairly often.
         elif step % display_iter == 0:
@@ -244,6 +244,8 @@ def run_training(hypes, modules, tv_graph, tv_sess, start_step=0):
             _, loss_value = sess.run([tv_graph['train_op'],
                                       tv_graph['losses']['total_loss']],
                                      feed_dict=feed_dict)
+
+            sess.run([tv_graph['mask_update_op']])
 
             _print_training_status(hypes, step, loss_value, start_time, lr)
 
@@ -255,8 +257,6 @@ def run_training(hypes, modules, tv_graph, tv_sess, start_step=0):
             smoothed_results = dict_smoother.get_weights()
 
             _print_eval_dict(eval_names, smoothed_results, prefix='(smooth)')
-
-            sess.run(mask_update_op)
 
             # Reset timer
             start_time = time.time()
@@ -286,7 +286,6 @@ def run_training(hypes, modules, tv_graph, tv_sess, start_step=0):
         if (step) % eval_iter == 0 and step > 0 or \
            (step + 1) == hypes['solver']['max_steps']:
             # write checkpoint to disk
-
             logging.info('Running Evaluation Script.')
             eval_dict, images = modules['eval'].evaluate(
                 hypes, sess, tv_graph['image_pl'], tv_graph['inf_out'])
