@@ -1,0 +1,738 @@
+/home/ubuntu/anaconda3/envs/tensorflow_p27/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+/home/ubuntu/anaconda3/envs/tensorflow_p27/lib/python2.7/site-packages/matplotlib/__init__.py:962: UserWarning: Duplicate key in file "/home/ubuntu/.config/matplotlib/matplotlibrc", line #2
+  (fname, cnt))
+/home/ubuntu/anaconda3/envs/tensorflow_p27/lib/python2.7/site-packages/matplotlib/__init__.py:962: UserWarning: Duplicate key in file "/home/ubuntu/.config/matplotlib/matplotlibrc", line #3
+  (fname, cnt))
+2018-03-22 21:08:05,284 INFO No environment variable 'TV_PLUGIN_DIR' found. Set to '/home/ubuntu/tv-plugins'.
+2018-03-22 21:08:05,284 INFO No environment variable 'TV_STEP_SHOW' found. Set to '50'.
+2018-03-22 21:08:05,284 INFO No environment variable 'TV_STEP_EVAL' found. Set to '250'.
+2018-03-22 21:08:05,284 INFO No environment variable 'TV_STEP_WRITE' found. Set to '1000'.
+2018-03-22 21:08:05,284 INFO No environment variable 'TV_MAX_KEEP' found. Set to '10'.
+2018-03-22 21:08:05,284 INFO No environment variable 'TV_STEP_STR' found. Set to 'Step {step}/{total_steps}: loss = {loss_value:.2f}; lr = {lr_value:.2e}; {sec_per_batch:.3f} sec (per Batch); {examples_per_sec:.1f} imgs/sec'.
+2018-03-22 21:08:05,285 INFO f: <open file 'hypes/PruneSeg.json', mode 'r' at 0x7f7b725d8420>
+2018-03-22 21:08:05,287 INFO Initialize training folder
+2018-03-22 21:08:05,288 INFO Start training
+2018-03-22 21:08:05.290199: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-03-22 21:08:05.379532: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:895] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-03-22 21:08:05.379875: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: 0000:00:1e.0
+totalMemory: 11.17GiB freeMemory: 11.10GiB
+2018-03-22 21:08:05.379900: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+npy file loaded
+Layer name: conv1_1
+Layer shape: (3, 3, 3, 64)
+2018-03-22 21:08:06,225 INFO Creating Summary for: conv1_1/filter
+2018-03-22 21:08:06,554 INFO Creating Summary for: conv1_1/biases
+Layer name: conv1_2
+Layer shape: (3, 3, 64, 64)
+2018-03-22 21:08:06,581 INFO Creating Summary for: conv1_2/filter
+2018-03-22 21:08:06,605 INFO Creating Summary for: conv1_2/biases
+Layer name: conv2_1
+Layer shape: (3, 3, 64, 128)
+2018-03-22 21:08:06,635 INFO Creating Summary for: conv2_1/filter
+2018-03-22 21:08:06,660 INFO Creating Summary for: conv2_1/biases
+Layer name: conv2_2
+Layer shape: (3, 3, 128, 128)
+2018-03-22 21:08:06,695 INFO Creating Summary for: conv2_2/filter
+2018-03-22 21:08:06,719 INFO Creating Summary for: conv2_2/biases
+Layer name: conv3_1
+Layer shape: (3, 3, 128, 256)
+2018-03-22 21:08:06,762 INFO Creating Summary for: conv3_1/filter
+2018-03-22 21:08:06,787 INFO Creating Summary for: conv3_1/biases
+Layer name: conv3_2
+Layer shape: (3, 3, 256, 256)
+2018-03-22 21:08:06,847 INFO Creating Summary for: conv3_2/filter
+2018-03-22 21:08:06,871 INFO Creating Summary for: conv3_2/biases
+Layer name: conv3_3
+Layer shape: (3, 3, 256, 256)
+2018-03-22 21:08:06,926 INFO Creating Summary for: conv3_3/filter
+2018-03-22 21:08:06,950 INFO Creating Summary for: conv3_3/biases
+Layer name: conv4_1
+Layer shape: (3, 3, 256, 512)
+2018-03-22 21:08:07,051 INFO Creating Summary for: conv4_1/filter
+2018-03-22 21:08:07,076 INFO Creating Summary for: conv4_1/biases
+Layer name: conv4_2
+Layer shape: (3, 3, 512, 512)
+2018-03-22 21:08:07,249 INFO Creating Summary for: conv4_2/filter
+2018-03-22 21:08:07,274 INFO Creating Summary for: conv4_2/biases
+Layer name: conv4_3
+Layer shape: (3, 3, 512, 512)
+2018-03-22 21:08:07,451 INFO Creating Summary for: conv4_3/filter
+2018-03-22 21:08:07,476 INFO Creating Summary for: conv4_3/biases
+Layer name: conv5_1
+Layer shape: (3, 3, 512, 512)
+2018-03-22 21:08:07,647 INFO Creating Summary for: conv5_1/filter
+2018-03-22 21:08:07,671 INFO Creating Summary for: conv5_1/biases
+Layer name: conv5_2
+Layer shape: (3, 3, 512, 512)
+2018-03-22 21:08:07,834 INFO Creating Summary for: conv5_2/filter
+2018-03-22 21:08:07,859 INFO Creating Summary for: conv5_2/biases
+Layer name: conv5_3
+Layer shape: (3, 3, 512, 512)
+2018-03-22 21:08:08,027 INFO Creating Summary for: conv5_3/filter
+2018-03-22 21:08:08,051 INFO Creating Summary for: conv5_3/biases
+Layer name: fc6
+Layer shape: [7, 7, 512, 4096]
+2018-03-22 21:08:15,682 INFO Creating Summary for: fc6/weights
+2018-03-22 21:08:15,701 INFO Creating Summary for: fc6/biases
+Layer name: fc7
+Layer shape: [1, 1, 4096, 4096]
+2018-03-22 21:08:16,909 INFO Creating Summary for: fc7/weights
+2018-03-22 21:08:16,929 INFO Creating Summary for: fc7/biases
+2018-03-22 21:08:16,961 INFO Creating Summary for: score_fr/weights
+2018-03-22 21:08:16,980 INFO Creating Summary for: score_fr/biases
+WARNING:tensorflow:From incl/tensorflow_fcn/fcn8_vgg_prune.py:114: calling argmax (from tensorflow.python.ops.math_ops) with dimension is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the `axis` argument instead
+2018-03-22 21:08:17,140 WARNING From incl/tensorflow_fcn/fcn8_vgg_prune.py:114: calling argmax (from tensorflow.python.ops.math_ops) with dimension is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the `axis` argument instead
+2018-03-22 21:08:17,153 INFO Creating Summary for: upscore2/up_filter
+2018-03-22 21:08:17,181 INFO Creating Summary for: score_pool4/weights
+2018-03-22 21:08:17,200 INFO Creating Summary for: score_pool4/biases
+2018-03-22 21:08:17,233 INFO Creating Summary for: upscore4/up_filter
+2018-03-22 21:08:17,260 INFO Creating Summary for: score_pool3/weights
+2018-03-22 21:08:17,279 INFO Creating Summary for: score_pool3/biases
+2018-03-22 21:08:17,313 INFO Creating Summary for: upscore32/up_filter
+INFO:tensorflow:Updating masks.
+2018-03-22 21:08:18,718 INFO Updating masks.
+INFO:tensorflow:Summary name conv1_1//mask:0/sparsity is illegal; using conv1_1//mask_0/sparsity instead.
+2018-03-22 21:08:18,725 INFO Summary name conv1_1//mask:0/sparsity is illegal; using conv1_1//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv1_2//mask:0/sparsity is illegal; using conv1_2//mask_0/sparsity instead.
+2018-03-22 21:08:18,729 INFO Summary name conv1_2//mask:0/sparsity is illegal; using conv1_2//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv2_1//mask:0/sparsity is illegal; using conv2_1//mask_0/sparsity instead.
+2018-03-22 21:08:18,734 INFO Summary name conv2_1//mask:0/sparsity is illegal; using conv2_1//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv2_2//mask:0/sparsity is illegal; using conv2_2//mask_0/sparsity instead.
+2018-03-22 21:08:18,739 INFO Summary name conv2_2//mask:0/sparsity is illegal; using conv2_2//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv3_1//mask:0/sparsity is illegal; using conv3_1//mask_0/sparsity instead.
+2018-03-22 21:08:18,743 INFO Summary name conv3_1//mask:0/sparsity is illegal; using conv3_1//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv3_2//mask:0/sparsity is illegal; using conv3_2//mask_0/sparsity instead.
+2018-03-22 21:08:18,747 INFO Summary name conv3_2//mask:0/sparsity is illegal; using conv3_2//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv3_3//mask:0/sparsity is illegal; using conv3_3//mask_0/sparsity instead.
+2018-03-22 21:08:18,752 INFO Summary name conv3_3//mask:0/sparsity is illegal; using conv3_3//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv4_1//mask:0/sparsity is illegal; using conv4_1//mask_0/sparsity instead.
+2018-03-22 21:08:18,756 INFO Summary name conv4_1//mask:0/sparsity is illegal; using conv4_1//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv4_2//mask:0/sparsity is illegal; using conv4_2//mask_0/sparsity instead.
+2018-03-22 21:08:18,761 INFO Summary name conv4_2//mask:0/sparsity is illegal; using conv4_2//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv4_3//mask:0/sparsity is illegal; using conv4_3//mask_0/sparsity instead.
+2018-03-22 21:08:18,765 INFO Summary name conv4_3//mask:0/sparsity is illegal; using conv4_3//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv5_1//mask:0/sparsity is illegal; using conv5_1//mask_0/sparsity instead.
+2018-03-22 21:08:18,769 INFO Summary name conv5_1//mask:0/sparsity is illegal; using conv5_1//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv5_2//mask:0/sparsity is illegal; using conv5_2//mask_0/sparsity instead.
+2018-03-22 21:08:18,774 INFO Summary name conv5_2//mask:0/sparsity is illegal; using conv5_2//mask_0/sparsity instead.
+INFO:tensorflow:Summary name conv5_3//mask:0/sparsity is illegal; using conv5_3//mask_0/sparsity instead.
+2018-03-22 21:08:18,778 INFO Summary name conv5_3//mask:0/sparsity is illegal; using conv5_3//mask_0/sparsity instead.
+npy file loaded
+Layer name: conv1_1
+Layer shape: (3, 3, 3, 64)
+Layer name: conv1_2
+Layer shape: (3, 3, 64, 64)
+Layer name: conv2_1
+Layer shape: (3, 3, 64, 128)
+Layer name: conv2_2
+Layer shape: (3, 3, 128, 128)
+Layer name: conv3_1
+Layer shape: (3, 3, 128, 256)
+Layer name: conv3_2
+Layer shape: (3, 3, 256, 256)
+Layer name: conv3_3
+Layer shape: (3, 3, 256, 256)
+Layer name: conv4_1
+Layer shape: (3, 3, 256, 512)
+Layer name: conv4_2
+Layer shape: (3, 3, 512, 512)
+Layer name: conv4_3
+Layer shape: (3, 3, 512, 512)
+Layer name: conv5_1
+Layer shape: (3, 3, 512, 512)
+Layer name: conv5_2
+Layer shape: (3, 3, 512, 512)
+Layer name: conv5_3
+Layer shape: (3, 3, 512, 512)
+Layer name: fc6
+Layer shape: [7, 7, 512, 4096]
+Layer name: fc7
+Layer shape: [1, 1, 4096, 4096]
+2018-03-22 21:08:33,341 INFO Step 0/1520: loss = 1.55; lr = 1.00e-05; 0.143 sec (per Batch); 7.0 imgs/sec
+2018-03-22 21:08:34,994 INFO       (raw)  Acc. : 0.71, xentropy: 0.60, weight_loss: 0.38
+2018-03-22 21:08:34,994 INFO    (smooth)  Acc. : 0.71, xentropy: 0.60, weight_loss: 0.38
+2018-03-22 21:10:13,487 INFO Step 20/1520: loss = 0.60; lr = 1.00e-05; 1.970 sec (per Batch); 0.5 imgs/sec
+2018-03-22 21:10:14,599 INFO       (raw)  Acc. : 0.94, xentropy: 0.16, weight_loss: 0.38
+2018-03-22 21:10:14,600 INFO    (smooth)  Acc. : 0.72, xentropy: 0.58, weight_loss: 0.38
+2018-03-22 21:11:24,949 INFO Step 40/1520: loss = 0.50; lr = 1.00e-05; 1.407 sec (per Batch); 0.7 imgs/sec
+2018-03-22 21:11:25,804 INFO       (raw)  Acc. : 0.94, xentropy: 0.16, weight_loss: 0.38
+2018-03-22 21:11:25,805 INFO    (smooth)  Acc. : 0.73, xentropy: 0.56, weight_loss: 0.38
+2018-03-22 21:12:29,588 INFO Step 60/1520: loss = 0.54; lr = 1.00e-05; 1.276 sec (per Batch); 0.8 imgs/sec
+2018-03-22 21:12:30,660 INFO       (raw)  Acc. : 0.95, xentropy: 0.12, weight_loss: 0.38
+2018-03-22 21:12:30,660 INFO    (smooth)  Acc. : 0.74, xentropy: 0.54, weight_loss: 0.38
+2018-03-22 21:13:20,823 INFO Step 80/1520: loss = 0.56; lr = 1.00e-05; 1.003 sec (per Batch); 1.0 imgs/sec
+2018-03-22 21:13:21,408 INFO       (raw)  Acc. : 0.95, xentropy: 0.13, weight_loss: 0.38
+2018-03-22 21:13:21,409 INFO    (smooth)  Acc. : 0.75, xentropy: 0.52, weight_loss: 0.38
+2018-03-22 21:14:08,959 INFO Step 100/1520: loss = 0.51; lr = 1.00e-05; 0.951 sec (per Batch); 1.1 imgs/sec
+2018-03-22 21:14:09,795 INFO       (raw)  Acc. : 0.91, xentropy: 0.28, weight_loss: 0.38
+2018-03-22 21:14:09,795 INFO    (smooth)  Acc. : 0.76, xentropy: 0.50, weight_loss: 0.38
+2018-03-22 21:14:15,902 INFO Running Evaluation Script.
+2018-03-22 21:16:26.498332: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:16:26,730 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:16:26,731 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:16:26,952 INFO Raw Results:
+2018-03-22 21:16:26,952 INFO     [train] MaxF1 (raw)    :  87.9035 
+2018-03-22 21:16:26,952 INFO     [train] BestThresh (raw)    :  92.1569 
+2018-03-22 21:16:26,952 INFO     [train] Average Precision (raw)    :  87.4994 
+2018-03-22 21:16:26,952 INFO     [val] MaxF1 (raw)    :  86.8730 
+2018-03-22 21:16:26,952 INFO     [val] BestThresh (raw)    :  89.0196 
+2018-03-22 21:16:26,952 INFO     [val] Average Precision (raw)    :  86.1845 
+2018-03-22 21:16:26,953 INFO     Speed (msec) (raw)    :  360.6671 
+2018-03-22 21:16:26,953 INFO     Speed (fps) (raw)    :  2.7726 
+2018-03-22 21:16:26,953 INFO Smooth Results:
+2018-03-22 21:16:26,954 INFO     [train] MaxF1 (smooth) :  87.9035 
+2018-03-22 21:16:26,954 INFO     [train] BestThresh (smooth) :  92.1569 
+2018-03-22 21:16:26,954 INFO     [train] Average Precision (smooth) :  87.4994 
+2018-03-22 21:16:26,954 INFO     [val] MaxF1 (smooth) :  86.8730 
+2018-03-22 21:16:26,954 INFO     [val] BestThresh (smooth) :  89.0196 
+2018-03-22 21:16:26,955 INFO     [val] Average Precision (smooth) :  86.1845 
+2018-03-22 21:16:26,955 INFO     Speed (msec) (smooth) :  360.6671 
+2018-03-22 21:16:26,955 INFO     Speed (fps) (smooth) :  2.7726 
+2018-03-22 21:17:20,163 INFO Step 120/1520: loss = 0.51; lr = 1.00e-05; 1.064 sec (per Batch); 0.9 imgs/sec
+2018-03-22 21:17:20,807 INFO       (raw)  Acc. : 0.97, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 21:17:20,807 INFO    (smooth)  Acc. : 0.77, xentropy: 0.48, weight_loss: 0.38
+2018-03-22 21:18:13,506 INFO Step 140/1520: loss = 0.66; lr = 1.00e-05; 1.054 sec (per Batch); 0.9 imgs/sec
+2018-03-22 21:18:14,619 INFO       (raw)  Acc. : 0.89, xentropy: 0.25, weight_loss: 0.38
+2018-03-22 21:18:14,619 INFO    (smooth)  Acc. : 0.78, xentropy: 0.47, weight_loss: 0.38
+2018-03-22 21:19:06,280 INFO Step 160/1520: loss = 0.50; lr = 1.00e-05; 1.033 sec (per Batch); 1.0 imgs/sec
+2018-03-22 21:19:07,162 INFO       (raw)  Acc. : 0.98, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 21:19:07,162 INFO    (smooth)  Acc. : 0.79, xentropy: 0.45, weight_loss: 0.38
+2018-03-22 21:19:43,766 INFO Step 180/1520: loss = 0.58; lr = 1.00e-05; 0.732 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:19:44,352 INFO       (raw)  Acc. : 0.94, xentropy: 0.19, weight_loss: 0.38
+2018-03-22 21:19:44,353 INFO    (smooth)  Acc. : 0.80, xentropy: 0.44, weight_loss: 0.38
+2018-03-22 21:20:34,976 INFO Step 200/1520: loss = 0.51; lr = 1.00e-05; 1.012 sec (per Batch); 1.0 imgs/sec
+2018-03-22 21:20:35,646 INFO       (raw)  Acc. : 0.92, xentropy: 0.17, weight_loss: 0.38
+2018-03-22 21:20:35,646 INFO    (smooth)  Acc. : 0.80, xentropy: 0.42, weight_loss: 0.38
+2018-03-22 21:20:42,530 INFO Running Evaluation Script.
+2018-03-22 21:22:52.389787: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:22:52,614 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:22:52,614 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:22:52,832 INFO Raw Results:
+2018-03-22 21:22:52,833 INFO     [train] MaxF1 (raw)    :  90.2242 
+2018-03-22 21:22:52,833 INFO     [train] BestThresh (raw)    :  42.3529 
+2018-03-22 21:22:52,833 INFO     [train] Average Precision (raw)    :  90.7451 
+2018-03-22 21:22:52,833 INFO     [val] MaxF1 (raw)    :  88.7526 
+2018-03-22 21:22:52,833 INFO     [val] BestThresh (raw)    :  27.8431 
+2018-03-22 21:22:52,833 INFO     [val] Average Precision (raw)    :  89.8830 
+2018-03-22 21:22:52,833 INFO     Speed (msec) (raw)    :  355.9855 
+2018-03-22 21:22:52,833 INFO     Speed (fps) (raw)    :  2.8091 
+2018-03-22 21:22:52,834 INFO Smooth Results:
+2018-03-22 21:22:52,835 INFO     [train] MaxF1 (smooth) :  89.0639 
+2018-03-22 21:22:52,835 INFO     [train] BestThresh (smooth) :  67.2549 
+2018-03-22 21:22:52,835 INFO     [train] Average Precision (smooth) :  89.1222 
+2018-03-22 21:22:52,835 INFO     [val] MaxF1 (smooth) :  87.8128 
+2018-03-22 21:22:52,835 INFO     [val] BestThresh (smooth) :  58.4314 
+2018-03-22 21:22:52,835 INFO     [val] Average Precision (smooth) :  88.0337 
+2018-03-22 21:22:52,835 INFO     Speed (msec) (smooth) :  358.3263 
+2018-03-22 21:22:52,835 INFO     Speed (fps) (smooth) :  2.7909 
+2018-03-22 21:23:42,826 INFO Step 220/1520: loss = 0.42; lr = 1.00e-05; 1.000 sec (per Batch); 1.0 imgs/sec
+2018-03-22 21:23:43,198 INFO       (raw)  Acc. : 0.94, xentropy: 0.16, weight_loss: 0.38
+2018-03-22 21:23:43,199 INFO    (smooth)  Acc. : 0.81, xentropy: 0.41, weight_loss: 0.38
+2018-03-22 21:24:23,919 INFO Step 240/1520: loss = 0.91; lr = 1.00e-05; 0.814 sec (per Batch); 1.2 imgs/sec
+2018-03-22 21:24:24,290 INFO       (raw)  Acc. : 0.85, xentropy: 0.44, weight_loss: 0.38
+2018-03-22 21:24:24,290 INFO    (smooth)  Acc. : 0.81, xentropy: 0.41, weight_loss: 0.38
+2018-03-22 21:25:07,493 INFO Step 260/1520: loss = 0.51; lr = 1.00e-05; 0.864 sec (per Batch); 1.2 imgs/sec
+2018-03-22 21:25:08,374 INFO       (raw)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 21:25:08,375 INFO    (smooth)  Acc. : 0.82, xentropy: 0.40, weight_loss: 0.38
+2018-03-22 21:25:48,551 INFO Step 280/1520: loss = 0.43; lr = 1.00e-05; 0.804 sec (per Batch); 1.2 imgs/sec
+2018-03-22 21:25:49,145 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.38
+2018-03-22 21:25:49,145 INFO    (smooth)  Acc. : 0.83, xentropy: 0.38, weight_loss: 0.38
+2018-03-22 21:26:24,920 INFO Step 300/1520: loss = 0.43; lr = 1.00e-05; 0.715 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:26:25,281 INFO       (raw)  Acc. : 0.96, xentropy: 0.09, weight_loss: 0.38
+2018-03-22 21:26:25,281 INFO    (smooth)  Acc. : 0.83, xentropy: 0.36, weight_loss: 0.38
+2018-03-22 21:26:31,442 INFO Running Evaluation Script.
+2018-03-22 21:28:41.381941: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:28:41,604 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:28:41,604 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:28:41,818 INFO Raw Results:
+2018-03-22 21:28:41,819 INFO     [train] MaxF1 (raw)    :  90.7877 
+2018-03-22 21:28:41,819 INFO     [train] BestThresh (raw)    :  21.5686 
+2018-03-22 21:28:41,819 INFO     [train] Average Precision (raw)    :  91.0946 
+2018-03-22 21:28:41,819 INFO     [val] MaxF1 (raw)    :  89.6333 
+2018-03-22 21:28:41,819 INFO     [val] BestThresh (raw)    :  7.4510 
+2018-03-22 21:28:41,819 INFO     [val] Average Precision (raw)    :  90.3620 
+2018-03-22 21:28:41,819 INFO     Speed (msec) (raw)    :  355.0431 
+2018-03-22 21:28:41,819 INFO     Speed (fps) (raw)    :  2.8166 
+2018-03-22 21:28:41,819 INFO Smooth Results:
+2018-03-22 21:28:41,820 INFO     [train] MaxF1 (smooth) :  90.2242 
+2018-03-22 21:28:41,820 INFO     [train] BestThresh (smooth) :  42.3529 
+2018-03-22 21:28:41,820 INFO     [train] Average Precision (smooth) :  90.7451 
+2018-03-22 21:28:41,820 INFO     [val] MaxF1 (smooth) :  88.7526 
+2018-03-22 21:28:41,820 INFO     [val] BestThresh (smooth) :  27.8431 
+2018-03-22 21:28:41,820 INFO     [val] Average Precision (smooth) :  89.8830 
+2018-03-22 21:28:41,821 INFO     Speed (msec) (smooth) :  355.9855 
+2018-03-22 21:28:41,821 INFO     Speed (fps) (smooth) :  2.8091 
+2018-03-22 21:29:19,869 INFO Step 320/1520: loss = 0.57; lr = 1.00e-05; 0.761 sec (per Batch); 1.3 imgs/sec
+2018-03-22 21:29:20,427 INFO       (raw)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 21:29:20,427 INFO    (smooth)  Acc. : 0.84, xentropy: 0.35, weight_loss: 0.38
+2018-03-22 21:29:56,217 INFO Step 340/1520: loss = 0.43; lr = 1.00e-05; 0.716 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:29:57,172 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.38
+2018-03-22 21:29:57,172 INFO    (smooth)  Acc. : 0.85, xentropy: 0.33, weight_loss: 0.38
+2018-03-22 21:30:33,368 INFO Step 360/1520: loss = 0.42; lr = 1.00e-05; 0.724 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:30:33,742 INFO       (raw)  Acc. : 0.92, xentropy: 0.25, weight_loss: 0.38
+2018-03-22 21:30:33,742 INFO    (smooth)  Acc. : 0.85, xentropy: 0.33, weight_loss: 0.38
+2018-03-22 21:31:10,329 INFO Step 380/1520: loss = 0.46; lr = 1.00e-05; 0.732 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:31:10,684 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.38
+2018-03-22 21:31:10,685 INFO    (smooth)  Acc. : 0.86, xentropy: 0.32, weight_loss: 0.38
+2018-03-22 21:31:47,326 INFO Step 400/1520: loss = 0.43; lr = 1.00e-05; 0.733 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:31:47,872 INFO       (raw)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 21:31:47,872 INFO    (smooth)  Acc. : 0.86, xentropy: 0.30, weight_loss: 0.38
+2018-03-22 21:31:54,203 INFO Running Evaluation Script.
+2018-03-22 21:34:03.522005: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:34:03,748 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:34:03,748 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:34:03,963 INFO Raw Results:
+2018-03-22 21:34:03,963 INFO     [train] MaxF1 (raw)    :  92.0492 
+2018-03-22 21:34:03,963 INFO     [train] BestThresh (raw)    :  8.6275 
+2018-03-22 21:34:03,963 INFO     [train] Average Precision (raw)    :  91.2869 
+2018-03-22 21:34:03,964 INFO     [val] MaxF1 (raw)    :  89.9797 
+2018-03-22 21:34:03,964 INFO     [val] BestThresh (raw)    :  2.7451 
+2018-03-22 21:34:03,964 INFO     [val] Average Precision (raw)    :  90.4582 
+2018-03-22 21:34:03,964 INFO     Speed (msec) (raw)    :  351.3015 
+2018-03-22 21:34:03,964 INFO     Speed (fps) (raw)    :  2.8466 
+2018-03-22 21:34:03,964 INFO Smooth Results:
+2018-03-22 21:34:03,965 INFO     [train] MaxF1 (smooth) :  90.5059 
+2018-03-22 21:34:03,965 INFO     [train] BestThresh (smooth) :  31.9608 
+2018-03-22 21:34:03,965 INFO     [train] Average Precision (smooth) :  90.9198 
+2018-03-22 21:34:03,966 INFO     [val] MaxF1 (smooth) :  89.1929 
+2018-03-22 21:34:03,966 INFO     [val] BestThresh (smooth) :  17.6471 
+2018-03-22 21:34:03,966 INFO     [val] Average Precision (smooth) :  90.1225 
+2018-03-22 21:34:03,966 INFO     Speed (msec) (smooth) :  355.5143 
+2018-03-22 21:34:03,966 INFO     Speed (fps) (smooth) :  2.8128 
+2018-03-22 21:34:37,412 INFO Step 420/1520: loss = 0.47; lr = 1.00e-05; 0.669 sec (per Batch); 1.5 imgs/sec
+2018-03-22 21:34:37,976 INFO       (raw)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 21:34:37,976 INFO    (smooth)  Acc. : 0.87, xentropy: 0.29, weight_loss: 0.38
+2018-03-22 21:35:13,751 INFO Step 440/1520: loss = 0.41; lr = 1.00e-05; 0.715 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:35:14,132 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.38
+2018-03-22 21:35:14,133 INFO    (smooth)  Acc. : 0.87, xentropy: 0.28, weight_loss: 0.38
+2018-03-22 21:35:49,033 INFO Step 460/1520: loss = 0.41; lr = 1.00e-05; 0.698 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:35:49,725 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.38
+2018-03-22 21:35:49,725 INFO    (smooth)  Acc. : 0.88, xentropy: 0.27, weight_loss: 0.38
+2018-03-22 21:36:24,716 INFO Step 480/1520: loss = 0.46; lr = 1.00e-05; 0.700 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:36:25,897 INFO       (raw)  Acc. : 0.97, xentropy: 0.09, weight_loss: 0.38
+2018-03-22 21:36:25,898 INFO    (smooth)  Acc. : 0.88, xentropy: 0.26, weight_loss: 0.38
+2018-03-22 21:36:54,247 INFO Step 500/1520: loss = 0.44; lr = 1.00e-05; 0.567 sec (per Batch); 1.8 imgs/sec
+2018-03-22 21:36:54,604 INFO       (raw)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 21:36:54,604 INFO    (smooth)  Acc. : 0.89, xentropy: 0.25, weight_loss: 0.38
+2018-03-22 21:37:00,898 INFO Running Evaluation Script.
+2018-03-22 21:39:11.278479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:39:11,502 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:39:11,502 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:39:11,714 INFO Raw Results:
+2018-03-22 21:39:11,715 INFO     [train] MaxF1 (raw)    :  93.1281 
+2018-03-22 21:39:11,715 INFO     [train] BestThresh (raw)    :  64.3137 
+2018-03-22 21:39:11,715 INFO     [train] Average Precision (raw)    :  91.6048 
+2018-03-22 21:39:11,715 INFO     [val] MaxF1 (raw)    :  90.4731 
+2018-03-22 21:39:11,715 INFO     [val] BestThresh (raw)    :  38.0392 
+2018-03-22 21:39:11,715 INFO     [val] Average Precision (raw)    :  90.4459 
+2018-03-22 21:39:11,715 INFO     Speed (msec) (raw)    :  355.3495 
+2018-03-22 21:39:11,715 INFO     Speed (fps) (raw)    :  2.8141 
+2018-03-22 21:39:11,715 INFO Smooth Results:
+2018-03-22 21:39:11,717 INFO     [train] MaxF1 (smooth) :  90.7877 
+2018-03-22 21:39:11,717 INFO     [train] BestThresh (smooth) :  42.3529 
+2018-03-22 21:39:11,717 INFO     [train] Average Precision (smooth) :  91.0946 
+2018-03-22 21:39:11,717 INFO     [val] MaxF1 (smooth) :  89.6333 
+2018-03-22 21:39:11,717 INFO     [val] BestThresh (smooth) :  27.8431 
+2018-03-22 21:39:11,717 INFO     [val] Average Precision (smooth) :  90.3620 
+2018-03-22 21:39:11,717 INFO     Speed (msec) (smooth) :  355.3495 
+2018-03-22 21:39:11,717 INFO     Speed (fps) (smooth) :  2.8141 
+2018-03-22 21:39:48,498 INFO Step 520/1520: loss = 0.46; lr = 1.00e-05; 0.736 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:39:49,097 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.38
+2018-03-22 21:39:49,097 INFO    (smooth)  Acc. : 0.89, xentropy: 0.24, weight_loss: 0.38
+2018-03-22 21:40:26,772 INFO Step 540/1520: loss = 0.40; lr = 1.00e-05; 0.753 sec (per Batch); 1.3 imgs/sec
+2018-03-22 21:40:27,137 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 21:40:27,137 INFO    (smooth)  Acc. : 0.90, xentropy: 0.23, weight_loss: 0.38
+2018-03-22 21:40:58,425 INFO Step 560/1520: loss = 0.55; lr = 1.00e-05; 0.626 sec (per Batch); 1.6 imgs/sec
+2018-03-22 21:40:58,791 INFO       (raw)  Acc. : 0.99, xentropy: 0.04, weight_loss: 0.38
+2018-03-22 21:40:58,791 INFO    (smooth)  Acc. : 0.90, xentropy: 0.22, weight_loss: 0.38
+2018-03-22 21:41:34,717 INFO Step 580/1520: loss = 0.45; lr = 1.00e-05; 0.719 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:41:35,077 INFO       (raw)  Acc. : 0.97, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 21:41:35,077 INFO    (smooth)  Acc. : 0.91, xentropy: 0.21, weight_loss: 0.38
+2018-03-22 21:42:12,121 INFO Step 600/1520: loss = 0.42; lr = 1.00e-05; 0.741 sec (per Batch); 1.3 imgs/sec
+2018-03-22 21:42:12,689 INFO       (raw)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 21:42:12,690 INFO    (smooth)  Acc. : 0.91, xentropy: 0.20, weight_loss: 0.38
+2018-03-22 21:42:18,735 INFO Running Evaluation Script.
+2018-03-22 21:44:28.353301: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:44:28,575 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:44:28,575 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:44:28,787 INFO Raw Results:
+2018-03-22 21:44:28,787 INFO     [train] MaxF1 (raw)    :  93.4360 
+2018-03-22 21:44:28,787 INFO     [train] BestThresh (raw)    :  17.6471 
+2018-03-22 21:44:28,787 INFO     [train] Average Precision (raw)    :  92.0291 
+2018-03-22 21:44:28,787 INFO     [val] MaxF1 (raw)    :  91.3700 
+2018-03-22 21:44:28,788 INFO     [val] BestThresh (raw)    :  7.8431 
+2018-03-22 21:44:28,788 INFO     [val] Average Precision (raw)    :  91.3409 
+2018-03-22 21:44:28,788 INFO     Speed (msec) (raw)    :  351.4221 
+2018-03-22 21:44:28,788 INFO     Speed (fps) (raw)    :  2.8456 
+2018-03-22 21:44:28,788 INFO Smooth Results:
+2018-03-22 21:44:28,789 INFO     [train] MaxF1 (smooth) :  91.4184 
+2018-03-22 21:44:28,789 INFO     [train] BestThresh (smooth) :  31.9608 
+2018-03-22 21:44:28,789 INFO     [train] Average Precision (smooth) :  91.1907 
+2018-03-22 21:44:28,789 INFO     [val] MaxF1 (smooth) :  89.8065 
+2018-03-22 21:44:28,789 INFO     [val] BestThresh (smooth) :  17.8431 
+2018-03-22 21:44:28,790 INFO     [val] Average Precision (smooth) :  90.4039 
+2018-03-22 21:44:28,790 INFO     Speed (msec) (smooth) :  355.1963 
+2018-03-22 21:44:28,790 INFO     Speed (fps) (smooth) :  2.8153 
+2018-03-22 21:45:01,156 INFO Step 620/1520: loss = 0.39; lr = 1.00e-05; 0.647 sec (per Batch); 1.5 imgs/sec
+2018-03-22 21:45:01,807 INFO       (raw)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 21:45:01,807 INFO    (smooth)  Acc. : 0.91, xentropy: 0.20, weight_loss: 0.38
+2018-03-22 21:45:32,439 INFO Step 640/1520: loss = 0.41; lr = 1.00e-05; 0.613 sec (per Batch); 1.6 imgs/sec
+2018-03-22 21:45:33,118 INFO       (raw)  Acc. : 0.98, xentropy: 0.04, weight_loss: 0.38
+2018-03-22 21:45:33,118 INFO    (smooth)  Acc. : 0.92, xentropy: 0.19, weight_loss: 0.38
+2018-03-22 21:46:05,902 INFO Step 660/1520: loss = 0.50; lr = 1.00e-05; 0.656 sec (per Batch); 1.5 imgs/sec
+2018-03-22 21:46:06,272 INFO       (raw)  Acc. : 0.98, xentropy: 0.04, weight_loss: 0.38
+2018-03-22 21:46:06,272 INFO    (smooth)  Acc. : 0.92, xentropy: 0.18, weight_loss: 0.38
+2018-03-22 21:46:35,109 INFO Step 680/1520: loss = 0.44; lr = 1.00e-05; 0.577 sec (per Batch); 1.7 imgs/sec
+2018-03-22 21:46:35,471 INFO       (raw)  Acc. : 0.98, xentropy: 0.04, weight_loss: 0.38
+2018-03-22 21:46:35,471 INFO    (smooth)  Acc. : 0.92, xentropy: 0.17, weight_loss: 0.38
+2018-03-22 21:47:11,745 INFO Step 700/1520: loss = 0.41; lr = 1.00e-05; 0.725 sec (per Batch); 1.4 imgs/sec
+2018-03-22 21:47:12,337 INFO       (raw)  Acc. : 0.97, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 21:47:12,337 INFO    (smooth)  Acc. : 0.93, xentropy: 0.17, weight_loss: 0.38
+2018-03-22 21:47:18,602 INFO Running Evaluation Script.
+2018-03-22 21:49:27.815219: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:49:28,038 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:49:28,039 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:49:28,252 INFO Raw Results:
+2018-03-22 21:49:28,252 INFO     [train] MaxF1 (raw)    :  94.5437 
+2018-03-22 21:49:28,252 INFO     [train] BestThresh (raw)    :  80.0000 
+2018-03-22 21:49:28,252 INFO     [train] Average Precision (raw)    :  91.9224 
+2018-03-22 21:49:28,253 INFO     [val] MaxF1 (raw)    :  92.4072 
+2018-03-22 21:49:28,253 INFO     [val] BestThresh (raw)    :  60.7843 
+2018-03-22 21:49:28,253 INFO     [val] Average Precision (raw)    :  91.1174 
+2018-03-22 21:49:28,253 INFO     Speed (msec) (raw)    :  357.5759 
+2018-03-22 21:49:28,253 INFO     Speed (fps) (raw)    :  2.7966 
+2018-03-22 21:49:28,253 INFO Smooth Results:
+2018-03-22 21:49:28,254 INFO     [train] MaxF1 (smooth) :  92.0492 
+2018-03-22 21:49:28,254 INFO     [train] BestThresh (smooth) :  42.3529 
+2018-03-22 21:49:28,254 INFO     [train] Average Precision (smooth) :  91.2869 
+2018-03-22 21:49:28,254 INFO     [val] MaxF1 (smooth) :  89.9797 
+2018-03-22 21:49:28,254 INFO     [val] BestThresh (smooth) :  27.8431 
+2018-03-22 21:49:28,254 INFO     [val] Average Precision (smooth) :  90.4459 
+2018-03-22 21:49:28,255 INFO     Speed (msec) (smooth) :  355.3495 
+2018-03-22 21:49:28,255 INFO     Speed (fps) (smooth) :  2.8141 
+2018-03-22 21:49:59,434 INFO Step 720/1520: loss = 0.42; lr = 1.00e-05; 0.624 sec (per Batch); 1.6 imgs/sec
+2018-03-22 21:50:00,017 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.38
+2018-03-22 21:50:00,017 INFO    (smooth)  Acc. : 0.93, xentropy: 0.16, weight_loss: 0.38
+2018-03-22 21:50:31,915 INFO Step 740/1520: loss = 0.45; lr = 1.00e-05; 0.638 sec (per Batch); 1.6 imgs/sec
+2018-03-22 21:50:32,284 INFO       (raw)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 21:50:32,285 INFO    (smooth)  Acc. : 0.93, xentropy: 0.16, weight_loss: 0.38
+2018-03-22 21:51:00,512 INFO Step 760/1520: loss = 0.45; lr = 1.00e-05; 0.565 sec (per Batch); 1.8 imgs/sec
+2018-03-22 21:51:01,111 INFO       (raw)  Acc. : 0.95, xentropy: 0.09, weight_loss: 0.38
+2018-03-22 21:51:01,112 INFO    (smooth)  Acc. : 0.93, xentropy: 0.15, weight_loss: 0.38
+2018-03-22 21:51:32,696 INFO Step 780/1520: loss = 0.45; lr = 1.00e-05; 0.632 sec (per Batch); 1.6 imgs/sec
+2018-03-22 21:51:33,223 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.38
+2018-03-22 21:51:33,223 INFO    (smooth)  Acc. : 0.93, xentropy: 0.15, weight_loss: 0.38
+2018-03-22 21:52:01,286 INFO Step 800/1520: loss = 0.41; lr = 1.00e-05; 0.561 sec (per Batch); 1.8 imgs/sec
+2018-03-22 21:52:01,661 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.38
+2018-03-22 21:52:01,661 INFO    (smooth)  Acc. : 0.94, xentropy: 0.14, weight_loss: 0.38
+2018-03-22 21:52:07,753 INFO Running Evaluation Script.
+2018-03-22 21:54:17.907113: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:54:18,129 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:54:18,129 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:54:18,341 INFO Raw Results:
+2018-03-22 21:54:18,341 INFO     [train] MaxF1 (raw)    :  94.9734 
+2018-03-22 21:54:18,341 INFO     [train] BestThresh (raw)    :  48.2353 
+2018-03-22 21:54:18,341 INFO     [train] Average Precision (raw)    :  92.2725 
+2018-03-22 21:54:18,342 INFO     [val] MaxF1 (raw)    :  92.5031 
+2018-03-22 21:54:18,342 INFO     [val] BestThresh (raw)    :  24.3137 
+2018-03-22 21:54:18,342 INFO     [val] Average Precision (raw)    :  91.4538 
+2018-03-22 21:54:18,342 INFO     Speed (msec) (raw)    :  356.2765 
+2018-03-22 21:54:18,342 INFO     Speed (fps) (raw)    :  2.8068 
+2018-03-22 21:54:18,342 INFO Smooth Results:
+2018-03-22 21:54:18,343 INFO     [train] MaxF1 (smooth) :  92.5886 
+2018-03-22 21:54:18,343 INFO     [train] BestThresh (smooth) :  45.2941 
+2018-03-22 21:54:18,343 INFO     [train] Average Precision (smooth) :  91.4458 
+2018-03-22 21:54:18,343 INFO     [val] MaxF1 (smooth) :  90.2264 
+2018-03-22 21:54:18,343 INFO     [val] BestThresh (smooth) :  26.0784 
+2018-03-22 21:54:18,343 INFO     [val] Average Precision (smooth) :  90.4521 
+2018-03-22 21:54:18,343 INFO     Speed (msec) (smooth) :  355.6675 
+2018-03-22 21:54:18,344 INFO     Speed (fps) (smooth) :  2.8116 
+2018-03-22 21:54:51,025 INFO Step 820/1520: loss = 0.46; lr = 1.00e-05; 0.654 sec (per Batch); 1.5 imgs/sec
+2018-03-22 21:54:51,394 INFO       (raw)  Acc. : 0.98, xentropy: 0.04, weight_loss: 0.38
+2018-03-22 21:54:51,394 INFO    (smooth)  Acc. : 0.94, xentropy: 0.14, weight_loss: 0.38
+2018-03-22 21:55:18,410 INFO Step 840/1520: loss = 0.40; lr = 1.00e-05; 0.540 sec (per Batch); 1.9 imgs/sec
+2018-03-22 21:55:18,769 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 21:55:18,769 INFO    (smooth)  Acc. : 0.94, xentropy: 0.13, weight_loss: 0.38
+2018-03-22 21:55:53,008 INFO Step 860/1520: loss = 0.48; lr = 1.00e-05; 0.685 sec (per Batch); 1.5 imgs/sec
+2018-03-22 21:55:53,655 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.38
+2018-03-22 21:55:53,655 INFO    (smooth)  Acc. : 0.94, xentropy: 0.13, weight_loss: 0.38
+2018-03-22 21:56:19,491 INFO Step 880/1520: loss = 0.40; lr = 1.00e-05; 0.517 sec (per Batch); 1.9 imgs/sec
+2018-03-22 21:56:19,854 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 21:56:19,854 INFO    (smooth)  Acc. : 0.95, xentropy: 0.12, weight_loss: 0.38
+2018-03-22 21:56:51,259 INFO Step 900/1520: loss = 0.41; lr = 1.00e-05; 0.628 sec (per Batch); 1.6 imgs/sec
+2018-03-22 21:56:51,845 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 21:56:51,846 INFO    (smooth)  Acc. : 0.95, xentropy: 0.12, weight_loss: 0.38
+2018-03-22 21:56:58,068 INFO Running Evaluation Script.
+2018-03-22 21:59:07.370622: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 21:59:07,593 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 21:59:07,593 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 21:59:07,805 INFO Raw Results:
+2018-03-22 21:59:07,805 INFO     [train] MaxF1 (raw)    :  95.1156 
+2018-03-22 21:59:07,805 INFO     [train] BestThresh (raw)    :  43.9216 
+2018-03-22 21:59:07,805 INFO     [train] Average Precision (raw)    :  92.2704 
+2018-03-22 21:59:07,805 INFO     [val] MaxF1 (raw)    :  92.6455 
+2018-03-22 21:59:07,805 INFO     [val] BestThresh (raw)    :  16.8627 
+2018-03-22 21:59:07,805 INFO     [val] Average Precision (raw)    :  91.5893 
+2018-03-22 21:59:07,805 INFO     Speed (msec) (raw)    :  356.0299 
+2018-03-22 21:59:07,805 INFO     Speed (fps) (raw)    :  2.8088 
+2018-03-22 21:59:07,806 INFO Smooth Results:
+2018-03-22 21:59:07,807 INFO     [train] MaxF1 (smooth) :  93.1281 
+2018-03-22 21:59:07,807 INFO     [train] BestThresh (smooth) :  43.9216 
+2018-03-22 21:59:07,807 INFO     [train] Average Precision (smooth) :  91.6048 
+2018-03-22 21:59:07,807 INFO     [val] MaxF1 (smooth) :  90.4731 
+2018-03-22 21:59:07,807 INFO     [val] BestThresh (smooth) :  24.3137 
+2018-03-22 21:59:07,807 INFO     [val] Average Precision (smooth) :  90.4582 
+2018-03-22 21:59:07,807 INFO     Speed (msec) (smooth) :  355.9855 
+2018-03-22 21:59:07,807 INFO     Speed (fps) (smooth) :  2.8091 
+2018-03-22 21:59:34,571 INFO Step 920/1520: loss = 0.40; lr = 1.00e-05; 0.535 sec (per Batch); 1.9 imgs/sec
+2018-03-22 21:59:35,175 INFO       (raw)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 21:59:35,175 INFO    (smooth)  Acc. : 0.95, xentropy: 0.11, weight_loss: 0.38
+2018-03-22 22:00:00,986 INFO Step 940/1520: loss = 0.43; lr = 1.00e-05; 0.516 sec (per Batch); 1.9 imgs/sec
+2018-03-22 22:00:01,568 INFO       (raw)  Acc. : 0.98, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 22:00:01,568 INFO    (smooth)  Acc. : 0.95, xentropy: 0.11, weight_loss: 0.38
+2018-03-22 22:00:29,316 INFO Step 960/1520: loss = 0.41; lr = 1.00e-05; 0.555 sec (per Batch); 1.8 imgs/sec
+2018-03-22 22:00:29,977 INFO       (raw)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 22:00:29,977 INFO    (smooth)  Acc. : 0.95, xentropy: 0.11, weight_loss: 0.38
+2018-03-22 22:01:02,707 INFO Step 980/1520: loss = 0.41; lr = 1.00e-05; 0.655 sec (per Batch); 1.5 imgs/sec
+2018-03-22 22:01:03,573 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 22:01:03,574 INFO    (smooth)  Acc. : 0.95, xentropy: 0.11, weight_loss: 0.38
+2018-03-22 22:01:30,671 INFO Step 1000/1520: loss = 0.41; lr = 1.00e-05; 0.542 sec (per Batch); 1.8 imgs/sec
+2018-03-22 22:01:31,036 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 22:01:31,036 INFO    (smooth)  Acc. : 0.96, xentropy: 0.10, weight_loss: 0.38
+2018-03-22 22:01:37,105 INFO Running Evaluation Script.
+2018-03-22 22:03:46.802138: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 22:03:47,028 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 22:03:47,028 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 22:03:47,241 INFO Raw Results:
+2018-03-22 22:03:47,241 INFO     [train] MaxF1 (raw)    :  95.3520 
+2018-03-22 22:03:47,241 INFO     [train] BestThresh (raw)    :  30.5882 
+2018-03-22 22:03:47,241 INFO     [train] Average Precision (raw)    :  92.2786 
+2018-03-22 22:03:47,242 INFO     [val] MaxF1 (raw)    :  93.2696 
+2018-03-22 22:03:47,242 INFO     [val] BestThresh (raw)    :  9.0196 
+2018-03-22 22:03:47,242 INFO     [val] Average Precision (raw)    :  91.6584 
+2018-03-22 22:03:47,242 INFO     Speed (msec) (raw)    :  357.8023 
+2018-03-22 22:03:47,242 INFO     Speed (fps) (raw)    :  2.7948 
+2018-03-22 22:03:47,242 INFO Smooth Results:
+2018-03-22 22:03:47,243 INFO     [train] MaxF1 (smooth) :  93.2820 
+2018-03-22 22:03:47,243 INFO     [train] BestThresh (smooth) :  43.1373 
+2018-03-22 22:03:47,243 INFO     [train] Average Precision (smooth) :  91.7636 
+2018-03-22 22:03:47,243 INFO     [val] MaxF1 (smooth) :  90.9216 
+2018-03-22 22:03:47,243 INFO     [val] BestThresh (smooth) :  20.5882 
+2018-03-22 22:03:47,244 INFO     [val] Average Precision (smooth) :  90.7878 
+2018-03-22 22:03:47,244 INFO     Speed (msec) (smooth) :  356.0077 
+2018-03-22 22:03:47,244 INFO     Speed (fps) (smooth) :  2.8089 
+2018-03-22 22:04:14,649 INFO Step 1020/1520: loss = 0.39; lr = 1.00e-05; 0.548 sec (per Batch); 1.8 imgs/sec
+2018-03-22 22:04:15,201 INFO       (raw)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 22:04:15,201 INFO    (smooth)  Acc. : 0.96, xentropy: 0.10, weight_loss: 0.38
+2018-03-22 22:04:41,056 INFO Step 1040/1520: loss = 0.48; lr = 1.00e-05; 0.517 sec (per Batch); 1.9 imgs/sec
+2018-03-22 22:04:41,419 INFO       (raw)  Acc. : 0.94, xentropy: 0.13, weight_loss: 0.38
+2018-03-22 22:04:41,419 INFO    (smooth)  Acc. : 0.96, xentropy: 0.10, weight_loss: 0.38
+2018-03-22 22:05:10,651 INFO Step 1060/1520: loss = 0.41; lr = 1.00e-05; 0.585 sec (per Batch); 1.7 imgs/sec
+2018-03-22 22:05:11,010 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 22:05:11,010 INFO    (smooth)  Acc. : 0.96, xentropy: 0.10, weight_loss: 0.38
+2018-03-22 22:05:35,571 INFO Step 1080/1520: loss = 0.40; lr = 1.00e-05; 0.491 sec (per Batch); 2.0 imgs/sec
+2018-03-22 22:05:35,939 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.38
+2018-03-22 22:05:35,939 INFO    (smooth)  Acc. : 0.96, xentropy: 0.09, weight_loss: 0.38
+2018-03-22 22:05:58,907 INFO Step 1100/1520: loss = 0.39; lr = 1.00e-05; 0.459 sec (per Batch); 2.2 imgs/sec
+2018-03-22 22:05:59,267 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.38
+2018-03-22 22:05:59,267 INFO    (smooth)  Acc. : 0.96, xentropy: 0.09, weight_loss: 0.38
+2018-03-22 22:06:05,536 INFO Running Evaluation Script.
+2018-03-22 22:08:15.000645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 22:08:15,227 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 22:08:15,227 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 22:08:15,443 INFO Raw Results:
+2018-03-22 22:08:15,443 INFO     [train] MaxF1 (raw)    :  95.6914 
+2018-03-22 22:08:15,443 INFO     [train] BestThresh (raw)    :  49.0196 
+2018-03-22 22:08:15,443 INFO     [train] Average Precision (raw)    :  92.2593 
+2018-03-22 22:08:15,443 INFO     [val] MaxF1 (raw)    :  93.8066 
+2018-03-22 22:08:15,443 INFO     [val] BestThresh (raw)    :  23.9216 
+2018-03-22 22:08:15,443 INFO     [val] Average Precision (raw)    :  91.8403 
+2018-03-22 22:08:15,443 INFO     Speed (msec) (raw)    :  355.4154 
+2018-03-22 22:08:15,444 INFO     Speed (fps) (raw)    :  2.8136 
+2018-03-22 22:08:15,444 INFO Smooth Results:
+2018-03-22 22:08:15,445 INFO     [train] MaxF1 (smooth) :  93.4360 
+2018-03-22 22:08:15,445 INFO     [train] BestThresh (smooth) :  43.9216 
+2018-03-22 22:08:15,445 INFO     [train] Average Precision (smooth) :  91.9224 
+2018-03-22 22:08:15,445 INFO     [val] MaxF1 (smooth) :  91.3700 
+2018-03-22 22:08:15,445 INFO     [val] BestThresh (smooth) :  23.9216 
+2018-03-22 22:08:15,445 INFO     [val] Average Precision (smooth) :  91.1174 
+2018-03-22 22:08:15,445 INFO     Speed (msec) (smooth) :  355.9855 
+2018-03-22 22:08:15,446 INFO     Speed (fps) (smooth) :  2.8091 
+2018-03-22 22:08:40,656 INFO Step 1120/1520: loss = 0.48; lr = 1.00e-05; 0.504 sec (per Batch); 2.0 imgs/sec
+2018-03-22 22:08:41,023 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.38
+2018-03-22 22:08:41,023 INFO    (smooth)  Acc. : 0.96, xentropy: 0.09, weight_loss: 0.38
+2018-03-22 22:09:08,448 INFO Step 1140/1520: loss = 0.44; lr = 1.00e-05; 0.548 sec (per Batch); 1.8 imgs/sec
+2018-03-22 22:09:08,823 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.38
+2018-03-22 22:09:08,823 INFO    (smooth)  Acc. : 0.96, xentropy: 0.09, weight_loss: 0.38
+2018-03-22 22:09:34,962 INFO Step 1160/1520: loss = 0.41; lr = 1.00e-05; 0.523 sec (per Batch); 1.9 imgs/sec
+2018-03-22 22:09:35,325 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 22:09:35,325 INFO    (smooth)  Acc. : 0.96, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 22:10:05,837 INFO Step 1180/1520: loss = 0.48; lr = 1.00e-05; 0.610 sec (per Batch); 1.6 imgs/sec
+2018-03-22 22:10:06,194 INFO       (raw)  Acc. : 0.95, xentropy: 0.12, weight_loss: 0.38
+2018-03-22 22:10:06,194 INFO    (smooth)  Acc. : 0.96, xentropy: 0.09, weight_loss: 0.38
+2018-03-22 22:10:33,673 INFO Step 1200/1520: loss = 0.40; lr = 1.00e-05; 0.550 sec (per Batch); 1.8 imgs/sec
+2018-03-22 22:10:34,039 INFO       (raw)  Acc. : 0.98, xentropy: 0.04, weight_loss: 0.38
+2018-03-22 22:10:34,040 INFO    (smooth)  Acc. : 0.96, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 22:10:40,248 INFO Running Evaluation Script.
+2018-03-22 22:12:50.237616: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 22:12:50,459 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 22:12:50,459 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 22:12:50,671 INFO Raw Results:
+2018-03-22 22:12:50,671 INFO     [train] MaxF1 (raw)    :  95.4872 
+2018-03-22 22:12:50,671 INFO     [train] BestThresh (raw)    :  48.2353 
+2018-03-22 22:12:50,671 INFO     [train] Average Precision (raw)    :  92.2742 
+2018-03-22 22:12:50,671 INFO     [val] MaxF1 (raw)    :  92.8320 
+2018-03-22 22:12:50,671 INFO     [val] BestThresh (raw)    :  25.8824 
+2018-03-22 22:12:50,672 INFO     [val] Average Precision (raw)    :  91.5363 
+2018-03-22 22:12:50,672 INFO     Speed (msec) (raw)    :  357.1604 
+2018-03-22 22:12:50,672 INFO     Speed (fps) (raw)    :  2.7999 
+2018-03-22 22:12:50,672 INFO Smooth Results:
+2018-03-22 22:12:50,673 INFO     [train] MaxF1 (smooth) :  93.9899 
+2018-03-22 22:12:50,673 INFO     [train] BestThresh (smooth) :  46.0784 
+2018-03-22 22:12:50,673 INFO     [train] Average Precision (smooth) :  91.9757 
+2018-03-22 22:12:50,673 INFO     [val] MaxF1 (smooth) :  91.8886 
+2018-03-22 22:12:50,673 INFO     [val] BestThresh (smooth) :  24.1176 
+2018-03-22 22:12:50,673 INFO     [val] Average Precision (smooth) :  91.2291 
+2018-03-22 22:12:50,673 INFO     Speed (msec) (smooth) :  356.0077 
+2018-03-22 22:12:50,674 INFO     Speed (fps) (smooth) :  2.8089 
+2018-03-22 22:13:15,731 INFO Step 1220/1520: loss = 0.42; lr = 1.00e-05; 0.501 sec (per Batch); 2.0 imgs/sec
+2018-03-22 22:13:16,857 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.38
+2018-03-22 22:13:16,857 INFO    (smooth)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 22:13:37,661 INFO Step 1240/1520: loss = 0.46; lr = 1.00e-05; 0.416 sec (per Batch); 2.4 imgs/sec
+2018-03-22 22:13:38,319 INFO       (raw)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.37
+2018-03-22 22:13:38,319 INFO    (smooth)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 22:14:04,289 INFO Step 1260/1520: loss = 0.44; lr = 1.00e-05; 0.519 sec (per Batch); 1.9 imgs/sec
+2018-03-22 22:14:04,641 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.37
+2018-03-22 22:14:04,641 INFO    (smooth)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 22:14:28,623 INFO Step 1280/1520: loss = 0.42; lr = 1.00e-05; 0.480 sec (per Batch); 2.1 imgs/sec
+2018-03-22 22:14:28,984 INFO       (raw)  Acc. : 0.98, xentropy: 0.07, weight_loss: 0.37
+2018-03-22 22:14:28,984 INFO    (smooth)  Acc. : 0.97, xentropy: 0.08, weight_loss: 0.38
+2018-03-22 22:14:51,016 INFO Step 1300/1520: loss = 0.40; lr = 1.00e-05; 0.441 sec (per Batch); 2.3 imgs/sec
+2018-03-22 22:14:51,568 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.37
+2018-03-22 22:14:51,568 INFO    (smooth)  Acc. : 0.97, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 22:14:57,846 INFO Running Evaluation Script.
+2018-03-22 22:17:07.775008: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 22:17:08,000 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 22:17:08,000 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 22:17:08,213 INFO Raw Results:
+2018-03-22 22:17:08,213 INFO     [train] MaxF1 (raw)    :  96.0087 
+2018-03-22 22:17:08,213 INFO     [train] BestThresh (raw)    :  37.6471 
+2018-03-22 22:17:08,213 INFO     [train] Average Precision (raw)    :  92.3821 
+2018-03-22 22:17:08,213 INFO     [val] MaxF1 (raw)    :  93.2081 
+2018-03-22 22:17:08,213 INFO     [val] BestThresh (raw)    :  13.3333 
+2018-03-22 22:17:08,213 INFO     [val] Average Precision (raw)    :  91.7577 
+2018-03-22 22:17:08,213 INFO     Speed (msec) (raw)    :  358.3006 
+2018-03-22 22:17:08,214 INFO     Speed (fps) (raw)    :  2.7910 
+2018-03-22 22:17:08,214 INFO Smooth Results:
+2018-03-22 22:17:08,215 INFO     [train] MaxF1 (smooth) :  94.5437 
+2018-03-22 22:17:08,215 INFO     [train] BestThresh (smooth) :  43.9216 
+2018-03-22 22:17:08,215 INFO     [train] Average Precision (smooth) :  92.0291 
+2018-03-22 22:17:08,215 INFO     [val] MaxF1 (smooth) :  92.4072 
+2018-03-22 22:17:08,215 INFO     [val] BestThresh (smooth) :  23.9216 
+2018-03-22 22:17:08,215 INFO     [val] Average Precision (smooth) :  91.3409 
+2018-03-22 22:17:08,215 INFO     Speed (msec) (smooth) :  356.0299 
+2018-03-22 22:17:08,215 INFO     Speed (fps) (smooth) :  2.8088 
+2018-03-22 22:17:34,521 INFO Step 1320/1520: loss = 0.45; lr = 1.00e-05; 0.526 sec (per Batch); 1.9 imgs/sec
+2018-03-22 22:17:34,885 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.37
+2018-03-22 22:17:34,885 INFO    (smooth)  Acc. : 0.97, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 22:18:01,066 INFO Step 1340/1520: loss = 0.41; lr = 1.00e-05; 0.524 sec (per Batch); 1.9 imgs/sec
+2018-03-22 22:18:01,435 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.37
+2018-03-22 22:18:01,435 INFO    (smooth)  Acc. : 0.97, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 22:18:32,565 INFO Step 1360/1520: loss = 0.40; lr = 1.00e-05; 0.623 sec (per Batch); 1.6 imgs/sec
+2018-03-22 22:18:32,905 INFO       (raw)  Acc. : 0.98, xentropy: 0.03, weight_loss: 0.37
+2018-03-22 22:18:32,906 INFO    (smooth)  Acc. : 0.97, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 22:18:55,346 INFO Step 1380/1520: loss = 0.42; lr = 1.00e-05; 0.449 sec (per Batch); 2.2 imgs/sec
+2018-03-22 22:18:56,244 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.37
+2018-03-22 22:18:56,244 INFO    (smooth)  Acc. : 0.97, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 22:19:19,194 INFO Step 1400/1520: loss = 0.41; lr = 1.00e-05; 0.459 sec (per Batch); 2.2 imgs/sec
+2018-03-22 22:19:19,556 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.37
+2018-03-22 22:19:19,556 INFO    (smooth)  Acc. : 0.97, xentropy: 0.07, weight_loss: 0.38
+2018-03-22 22:19:25,748 INFO Running Evaluation Script.
+2018-03-22 22:21:35.236180: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 22:21:35,461 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 22:21:35,461 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 22:21:35,678 INFO Raw Results:
+2018-03-22 22:21:35,678 INFO     [train] MaxF1 (raw)    :  96.0130 
+2018-03-22 22:21:35,678 INFO     [train] BestThresh (raw)    :  29.8039 
+2018-03-22 22:21:35,678 INFO     [train] Average Precision (raw)    :  92.3879 
+2018-03-22 22:21:35,678 INFO     [val] MaxF1 (raw)    :  94.0322 
+2018-03-22 22:21:35,678 INFO     [val] BestThresh (raw)    :  18.0392 
+2018-03-22 22:21:35,678 INFO     [val] Average Precision (raw)    :  92.0880 
+2018-03-22 22:21:35,678 INFO     Speed (msec) (raw)    :  355.5411 
+2018-03-22 22:21:35,679 INFO     Speed (fps) (raw)    :  2.8126 
+2018-03-22 22:21:35,679 INFO Smooth Results:
+2018-03-22 22:21:35,680 INFO     [train] MaxF1 (smooth) :  94.7586 
+2018-03-22 22:21:35,680 INFO     [train] BestThresh (smooth) :  43.1373 
+2018-03-22 22:21:35,680 INFO     [train] Average Precision (smooth) :  92.1442 
+2018-03-22 22:21:35,680 INFO     [val] MaxF1 (smooth) :  92.4551 
+2018-03-22 22:21:35,680 INFO     [val] BestThresh (smooth) :  20.9804 
+2018-03-22 22:21:35,680 INFO     [val] Average Precision (smooth) :  91.3974 
+2018-03-22 22:21:35,681 INFO     Speed (msec) (smooth) :  356.0077 
+2018-03-22 22:21:35,681 INFO     Speed (fps) (smooth) :  2.8089 
+2018-03-22 22:22:01,634 INFO Step 1420/1520: loss = 0.38; lr = 1.00e-05; 0.519 sec (per Batch); 1.9 imgs/sec
+2018-03-22 22:22:02,000 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.37
+2018-03-22 22:22:02,000 INFO    (smooth)  Acc. : 0.97, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 22:22:29,572 INFO Step 1440/1520: loss = 0.39; lr = 1.00e-05; 0.551 sec (per Batch); 1.8 imgs/sec
+2018-03-22 22:22:29,939 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.37
+2018-03-22 22:22:29,939 INFO    (smooth)  Acc. : 0.97, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 22:22:56,830 INFO Step 1460/1520: loss = 0.39; lr = 1.00e-05; 0.538 sec (per Batch); 1.9 imgs/sec
+2018-03-22 22:22:57,414 INFO       (raw)  Acc. : 0.99, xentropy: 0.03, weight_loss: 0.37
+2018-03-22 22:22:57,414 INFO    (smooth)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 22:23:25,404 INFO Step 1480/1520: loss = 0.39; lr = 1.00e-05; 0.560 sec (per Batch); 1.8 imgs/sec
+2018-03-22 22:23:25,760 INFO       (raw)  Acc. : 0.99, xentropy: 0.02, weight_loss: 0.37
+2018-03-22 22:23:25,761 INFO    (smooth)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 22:23:56,174 INFO Step 1500/1520: loss = 0.40; lr = 1.00e-05; 0.608 sec (per Batch); 1.6 imgs/sec
+2018-03-22 22:23:56,736 INFO       (raw)  Acc. : 0.98, xentropy: 0.05, weight_loss: 0.37
+2018-03-22 22:23:56,736 INFO    (smooth)  Acc. : 0.98, xentropy: 0.06, weight_loss: 0.38
+2018-03-22 22:24:02,927 INFO Running Evaluation Script.
+2018-03-22 22:26:12.697062: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 22:26:12,921 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 22:26:12,922 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 22:26:13,136 INFO Raw Results:
+2018-03-22 22:26:13,136 INFO     [train] MaxF1 (raw)    :  96.1892 
+2018-03-22 22:26:13,136 INFO     [train] BestThresh (raw)    :  70.9804 
+2018-03-22 22:26:13,136 INFO     [train] Average Precision (raw)    :  92.3570 
+2018-03-22 22:26:13,136 INFO     [val] MaxF1 (raw)    :  93.6369 
+2018-03-22 22:26:13,136 INFO     [val] BestThresh (raw)    :  41.9608 
+2018-03-22 22:26:13,136 INFO     [val] Average Precision (raw)    :  91.7747 
+2018-03-22 22:26:13,136 INFO     Speed (msec) (raw)    :  353.1342 
+2018-03-22 22:26:13,137 INFO     Speed (fps) (raw)    :  2.8318 
+2018-03-22 22:26:13,137 INFO Smooth Results:
+2018-03-22 22:26:13,138 INFO     [train] MaxF1 (smooth) :  94.9734 
+2018-03-22 22:26:13,138 INFO     [train] BestThresh (smooth) :  43.9216 
+2018-03-22 22:26:13,138 INFO     [train] Average Precision (smooth) :  92.2593 
+2018-03-22 22:26:13,138 INFO     [val] MaxF1 (smooth) :  92.5031 
+2018-03-22 22:26:13,138 INFO     [val] BestThresh (smooth) :  23.9216 
+2018-03-22 22:26:13,138 INFO     [val] Average Precision (smooth) :  91.4538 
+2018-03-22 22:26:13,139 INFO     Speed (msec) (smooth) :  355.9855 
+2018-03-22 22:26:13,139 INFO     Speed (fps) (smooth) :  2.8091 
+2018-03-22 22:27:00,952 INFO Running Evaluation Script.
+2018-03-22 22:29:10.407010: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1195] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-03-22 22:29:10,632 INFO Evaluation Finished. All results will be saved to:
+2018-03-22 22:29:10,633 INFO /home/ubuntu/PruneSeg/hypes/../RUNS/PruneSeg_2018_03_22_21.08
+2018-03-22 22:29:10,845 INFO Raw Results:
+2018-03-22 22:29:10,845 INFO     [train] MaxF1 (raw)    :  96.3055 
+2018-03-22 22:29:10,845 INFO     [train] BestThresh (raw)    :  55.2941 
+2018-03-22 22:29:10,845 INFO     [train] Average Precision (raw)    :  92.3821 
+2018-03-22 22:29:10,846 INFO     [val] MaxF1 (raw)    :  93.8772 
+2018-03-22 22:29:10,846 INFO     [val] BestThresh (raw)    :  29.4118 
+2018-03-22 22:29:10,846 INFO     [val] Average Precision (raw)    :  91.8006 
+2018-03-22 22:29:10,846 INFO     Speed (msec) (raw)    :  355.8929 
+2018-03-22 22:29:10,846 INFO     Speed (fps) (raw)    :  2.8098 
+2018-03-22 22:29:10,846 INFO Smooth Results:
+2018-03-22 22:29:10,847 INFO     [train] MaxF1 (smooth) :  95.0445 
+2018-03-22 22:29:10,847 INFO     [train] BestThresh (smooth) :  46.0784 
+2018-03-22 22:29:10,847 INFO     [train] Average Precision (smooth) :  92.2648 
+2018-03-22 22:29:10,848 INFO     [val] MaxF1 (smooth) :  92.5743 
+2018-03-22 22:29:10,848 INFO     [val] BestThresh (smooth) :  24.1176 
+2018-03-22 22:29:10,848 INFO     [val] Average Precision (smooth) :  91.4950 
+2018-03-22 22:29:10,848 INFO     Speed (msec) (smooth) :  355.9392 
+2018-03-22 22:29:10,848 INFO     Speed (fps) (smooth) :  2.8095 
+2018-03-22 22:29:35.861757: W tensorflow/core/kernels/queue_base.cc:277] _0_Queues/fifo_queue: Skipping cancelled enqueue attempt with queue not closed
