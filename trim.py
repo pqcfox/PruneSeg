@@ -9,6 +9,7 @@ from __future__ import print_function
 import json
 import logging
 import os
+import shutil
 import sys
 
 import collections
@@ -106,7 +107,6 @@ def main(_):
     logging.info("Trimming weights.")
 
     logdir = os.path.join(runs_dir, FLAGS.RUN)
-    hypes = utils.load_hypes_from_logdir(logdir)
     modules = utils.load_modules_from_logdir(logdir)
 
     with tf.Graph().as_default():
@@ -119,12 +119,14 @@ def main(_):
                                              image=image)
 
         # Create a session for running Ops on the Graph.
+        shutil.copytree(logdir, 'trimmed')
         sess = tf.Session()
         saver = tf.train.Saver()
-        core.load_weights(logdir, sess, saver)
+        core.load_weights('trimmed', sess, saver)
     
         for weight in tf.contrib.model_pruning.get_masks():
-            if t.name in hypes['pruning']['prune_layers']:
+            print(weight.name)
+            if weight.name in hypes['pruning']['layers']:
                 weight_value = sess.run(weight)
                 l1_values = np.sum(np.abs(weight_value), axis=[0, 1, 2])
                 toss_kernels = l1_values.argsort()[:hypes['pruning']['m']]
@@ -132,7 +134,9 @@ def main(_):
                 assign_op = state_ops.assign(weight, tf.constant(weight_value))
                 sess.run(assign_op)
 
-        saver.save(sess, 'trim-output-' + hypes['pruning']['name'])
+        trim_output = os.path.join('trimmed', 'trimmed-' + hypes['pruning']['name'])
+        os.mkdir(trim_output)
+        saver.save(sess, trim_output)
 
 
 if __name__ == '__main__':
