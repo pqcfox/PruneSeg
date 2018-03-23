@@ -99,13 +99,9 @@ def main(_):
         runs_dir = 'RUNS'
 
     utils.set_dirs(hypes, tf.app.flags.FLAGS.hypes)
-
     utils._add_paths_to_sys(hypes)
-
     train.maybe_download_and_extract(hypes)
-
     maybe_download_and_extract(runs_dir)
-
 
     logging.info("Trimming weights.")
 
@@ -125,9 +121,19 @@ def main(_):
         # Create a session for running Ops on the Graph.
         sess = tf.Session()
         saver = tf.train.Saver()
-
         core.load_weights(logdir, sess, saver)
-        print('locked and loaded')
+    
+        for weight in tf.contrib.model_pruning.get_masks():
+            if t.name in hypes['pruning']['prune_layers']:
+                weight_value = sess.run(weight)
+                l1_values = np.sum(np.abs(weight_value), axis=[0, 1, 2])
+                toss_kernels = l1_values.argsort()[:hypes['pruning']['m']]
+                weight_value[:, :, :, toss_kernels] = 0
+                assign_op = state_ops.assign(weight, tf.constant(weight_value))
+                sess.run(assign_op)
+
+        saver.save(sess, 'trim-output-' + hypes['pruning']['name'])
+
 
 if __name__ == '__main__':
     tf.app.run()
