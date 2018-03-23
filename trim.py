@@ -105,9 +105,8 @@ def main(_):
     maybe_download_and_extract(runs_dir)
 
     logging.info("Trimming weights.")
-
     logdir = os.path.join(runs_dir, FLAGS.RUN)
-    modules = utils.load_modules_from_logdir(logdir)
+    modules = utils.load_modules_from_hypes(hypes)
 
     with tf.Graph().as_default():
 
@@ -121,7 +120,7 @@ def main(_):
         # Create a session for running Ops on the Graph.
         trim_dir = 'RUNS/trimmed'
         shutil.copytree(logdir, trim_dir)
-        sess = tf.Session()
+        sess = tf.Session().as_default()
         saver = tf.train.Saver()
         core.load_weights(trim_dir, sess, saver)
     
@@ -136,9 +135,44 @@ def main(_):
                 assign_op = tf.assign(weight, tf.constant(weight_value))
                 sess.run(assign_op)
 
-        train.continue_training()
-        
 
+        # brought over from submodules/TensorVision/tensorvision/train.py:continue_training
+        tv_sess = core.start_tv_session(hypes)
+        sess = tv_sess['sess']
+        saver = tv_sess['saver']
+
+        logging_file = os.path.join(logdir, 'output.log')
+        utils.create_filewrite_handler(logging_file, mode='a')
+
+        logging.info("Continue training.")
+
+        cur_step = core.load_weights(logdir, sess, saver)
+        if cur_step is None:
+            logging.warning("Loaded global_step is None.")
+            logging.warning("This could mean,"
+                            " that no weights have been loaded.")
+            logging.warning("Starting Training with step 0.")
+            cur_step = 0
+
+        with tf.name_scope('Validation'):
+            tf.get_variable_scope().reuse_variables()
+            image_pl = tf.placeholder(tf.float32)
+            image = tf.expand_dims(image_pl, 0)
+            image.set_shape([1, None, None, 3])
+            inf_out = core.build_inference_graph(hypes, modules,
+                                                 image=image)
+            tv_graph['image_pl'] = image_pl
+            tv_graph['inf_out'] = inf_out
+
+        # Start the data load
+        modules['input'].start_enqueuing_threads(hypes, queue, 'train', sess)
+
+        # And then after everything is built, start the training loop.
+        run_training(hypes, modules, tv_graph, tv_sess, cur_step)
+
+        # stopping input Threads
+        tv_sess['coord'].request_stop()
+        tv_sess['coord'].join(tv_sess['threads'])
 
 if __name__ == '__main__':
     tf.app.run()
