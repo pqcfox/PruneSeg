@@ -119,24 +119,25 @@ def main(_):
                                              image=image)
 
         # Create a session for running Ops on the Graph.
-        shutil.copytree(logdir, 'trimmed')
+        trim_dir = 'RUNS/trimmed'
+        shutil.copytree(logdir, trim_dir)
         sess = tf.Session()
         saver = tf.train.Saver()
-        core.load_weights('trimmed', sess, saver)
+        core.load_weights(trim_dir, sess, saver)
     
         for weight in tf.contrib.model_pruning.get_masks():
-            print(weight.name)
-            if weight.name in hypes['pruning']['layers']:
+            if any([layer in weight.name for layer in hypes['pruning']['layers']]):
                 weight_value = sess.run(weight)
-                l1_values = np.sum(np.abs(weight_value), axis=[0, 1, 2])
-                toss_kernels = l1_values.argsort()[:hypes['pruning']['m']]
+                kernel_count = int(weight_value.shape[3] * hypes['pruning']['target_sparsity'])
+
+                l1_values = np.sum(np.abs(weight_value), axis=(0, 1, 2))
+                toss_kernels = l1_values.argsort()[:kernel_count]
                 weight_value[:, :, :, toss_kernels] = 0
-                assign_op = state_ops.assign(weight, tf.constant(weight_value))
+                assign_op = tf.assign(weight, tf.constant(weight_value))
                 sess.run(assign_op)
 
-        trim_output = os.path.join('trimmed', 'trimmed-' + hypes['pruning']['name'])
-        os.mkdir(trim_output)
-        saver.save(sess, trim_output)
+        train.continue_training()
+        
 
 
 if __name__ == '__main__':
