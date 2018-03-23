@@ -110,69 +110,67 @@ def main(_):
 
     with tf.Graph().as_default():
 
-        # prepaire the tv session
-        image_pl = tf.placeholder(tf.float32)
-        image = tf.expand_dims(image_pl, 0)
-        image.set_shape([1, None, None, 3])
-        inf_out = core.build_inference_graph(hypes, modules,
-                                             image=image)
+	# build the graph based on the loaded modules
+	with tf.name_scope("Queues"):
+	    queue = modules['input'].create_queues(hypes, 'train')
 
-        # Create a session for running Ops on the Graph.
-        trim_dir = 'RUNS/trimmed'
-        shutil.copytree(logdir, trim_dir)
-        sess = tf.Session().as_default()
-        saver = tf.train.Saver()
-        core.load_weights(trim_dir, sess, saver)
+	tv_graph = core.build_training_graph(hypes, queue, modules)
+
+	# prepare the tv session
+        with tf.Session().as_default():
+	    tv_sess = core.start_tv_session(hypes)
+	sess = tv_sess['sess']
+	saver = tv_sess['saver']
+
+	cur_step = core.load_weights(logdir, sess, saver)
+	if cur_step is None:
+	    logging.warning("Loaded global_step is None.")
+	    logging.warning("This could mean,"
+			    " that no weights have been loaded.")
+	    logging.warning("Starting Training with step 0.")
+	    cur_step = 0
+
+	with tf.name_scope('Validation'):
+	    tf.get_variable_scope().reuse_variables()
+	    image_pl = tf.placeholder(tf.float32)
+	    image = tf.expand_dims(image_pl, 0)
+	    image.set_shape([1, None, None, 3])
+	    inf_out = core.build_inference_graph(hypes, modules,
+						 image=image)
+	    tv_graph['image_pl'] = image_pl
+	    tv_graph['inf_out'] = inf_out
+
+	# prepaire the tv session
+	image_pl = tf.placeholder(tf.float32)
+	image = tf.expand_dims(image_pl, 0)
+	image.set_shape([1, None, None, 3])
+	inf_out = core.build_inference_graph(hypes, modules,
+					     image=image)
+
+	# Create a session for running Ops on the Graph.
+	trim_dir = 'RUNS/trimmed'
+	shutil.copytree(logdir, trim_dir)
+        shutil.copy(tf.app.flags.FLAGS.hypes,
+                    os.path.join(trim_dir, 'model_files', 'hypes.json'))
+	sess = tf.Session()
+	saver = tf.train.Saver()
+	core.load_weights(trim_dir, sess, saver)
     
-        for weight in tf.contrib.model_pruning.get_masks():
-            if any([layer in weight.name for layer in hypes['pruning']['layers']]):
-                weight_value = sess.run(weight)
-                kernel_count = int(weight_value.shape[3] * hypes['pruning']['target_sparsity'])
+	for weight in tf.contrib.model_pruning.get_masks():
+	    if any([layer in weight.name for layer in hypes['layer_pruning']['layers']]):
+		weight_value = tv_sess['sess'].run(weight)
+		kernel_count = int(weight_value.shape[3] * hypes['layer_pruning']['layer_sparsity'])
 
-                l1_values = np.sum(np.abs(weight_value), axis=(0, 1, 2))
-                toss_kernels = l1_values.argsort()[:kernel_count]
-                weight_value[:, :, :, toss_kernels] = 0
-                assign_op = tf.assign(weight, tf.constant(weight_value))
-                sess.run(assign_op)
+		l1_values = np.sum(np.abs(weight_value), axis=(0, 1, 2))
+		toss_kernels = l1_values.argsort()[:kernel_count]
+		weight_value[:, :, :, toss_kernels] = 0
+		assign_op = tf.assign(weight, tf.constant(weight_value))
+		tv_sess['sess'].run(assign_op)
 
+        checkpoint_path = os.path.join(trim_dir, 'model.ckpt')
+        tv_sess['saver'].save(sess, checkpoint_path, global_step=cur_step)
 
-        # brought over from submodules/TensorVision/tensorvision/train.py:continue_training
-        tv_sess = core.start_tv_session(hypes)
-        sess = tv_sess['sess']
-        saver = tv_sess['saver']
-
-        logging_file = os.path.join(logdir, 'output.log')
-        utils.create_filewrite_handler(logging_file, mode='a')
-
-        logging.info("Continue training.")
-
-        cur_step = core.load_weights(logdir, sess, saver)
-        if cur_step is None:
-            logging.warning("Loaded global_step is None.")
-            logging.warning("This could mean,"
-                            " that no weights have been loaded.")
-            logging.warning("Starting Training with step 0.")
-            cur_step = 0
-
-        with tf.name_scope('Validation'):
-            tf.get_variable_scope().reuse_variables()
-            image_pl = tf.placeholder(tf.float32)
-            image = tf.expand_dims(image_pl, 0)
-            image.set_shape([1, None, None, 3])
-            inf_out = core.build_inference_graph(hypes, modules,
-                                                 image=image)
-            tv_graph['image_pl'] = image_pl
-            tv_graph['inf_out'] = inf_out
-
-        # Start the data load
-        modules['input'].start_enqueuing_threads(hypes, queue, 'train', sess)
-
-        # And then after everything is built, start the training loop.
-        run_training(hypes, modules, tv_graph, tv_sess, cur_step)
-
-        # stopping input Threads
-        tv_sess['coord'].request_stop()
-        tv_sess['coord'].join(tv_sess['threads'])
+    train.continue_training(trim_dir)
 
 if __name__ == '__main__':
     tf.app.run()

@@ -152,4 +152,10 @@ def evaluate(hypes, sess, image_pl, inf_out):
     eval_list.append(('Speed (msec)', 1000*dt))
     eval_list.append(('Speed (fps)', 1/dt))
 
+    with open('auc_dump', w) as f:
+        writer = csv.writer(f)
+        lines = zip(eval_dict[phase]['precision'], eval_dict[phase]['recall'])
+        lines.insert('precision,recall', 0)
+        writer.writerows(lines)
+
     return eval_list, image_list
